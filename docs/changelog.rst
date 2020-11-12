@@ -291,7 +291,7 @@ CHANGELOG
 
 
 2.33.13 (2020-07-01)
--------------------
+--------------------
 
 **New Feature**
 
@@ -300,7 +300,7 @@ CHANGELOG
 
 
 2.33.12 (2020-06-23)
--------------------
+--------------------
 
 **Bug fixes**
 
@@ -316,7 +316,7 @@ CHANGELOG
 
 
 2.33.11 (2020-06-05)
--------------------
+--------------------
 
 **Bug fixes**
 
@@ -324,7 +324,7 @@ CHANGELOG
 
 
 2.33.10 (2020-06-02)
--------------------
+--------------------
 
 **Bug fixes**
 
@@ -2552,7 +2552,7 @@ In order to enable those features under construction, add ``experimental = True`
 
     Give related permissions to the managers group in order to allow edition
     (``add_flatpage``, ``change_flatpage``, ``delete_flatpage``,
-     ``add_touristiccontent`` ...).
+    ``add_touristiccontent`` ...).
 
 
 0.27.2 (2010-10-14)
@@ -2736,7 +2736,7 @@ Since the map export have changed, empty the cache :
 * Rework display of lists in detail pages, better factorization
 * Removed links in logbook list for certain models
 * Display messages in login page too (useful for redirections)
-Support edition of several fields on the same map, via django-leaflet new feature (fixes #53)
+* Support edition of several fields on the same map, via django-leaflet new feature (fixes #53)
 
 
 0.24.3 (2014-06-27)
