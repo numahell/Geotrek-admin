@@ -54,6 +54,9 @@ class CSVSerializer(Serializer):
         ascii = options.get('ensure_ascii', True)
 
         headers = self.get_csv_header(columns, model)
+        from django.utils import translation
+        print(translation.get_language())
+        print(headers)
 
         getters = self.getters_csv(columns, model, ascii)
 
