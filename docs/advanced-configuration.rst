@@ -195,7 +195,7 @@ add the following code:
     # Enable diving module
     INSTALLED_APPS += ('geotrek.diving', )
 
-Then run ``sudo geotrek migrate; sudo service geotrek restart``.
+Then run ``sudo geotrek migrate; sudo geotrek update_translation_fields; sudo service geotrek restart``.
 
 You can also insert diving minimal data (default practices, difficulties, levels and group permissions values):
 
