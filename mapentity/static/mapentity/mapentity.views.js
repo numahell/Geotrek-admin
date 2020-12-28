@@ -40,7 +40,7 @@ $(window).on('entity:view:list', function (e, data) {
 
 
     // Show tooltips on left menu
-    $('#entitylist a').tooltip({'placement': 'right'});
+    $('#entitylist .nav-link').tooltip({ placement: 'right', boundary: 'window' });
 
     // Trigger a call to the format url
     $('#list-download-toolbar button').on('click', function () {
