@@ -18,7 +18,7 @@
                         <img src="{% static entity.icon_small %}"/> {{ entity.label }}
                       </a>
                       <div class="add-btn">
-                        <a class="btn btn-success btn-mini" title="{% trans "Add" %}" href="{% url entity.url_add %}">+</a>
+                        <a class="btn btn-success btn-mini" title="{% trans 'Add' %}" href="{% url entity.url_add %}">+</a>
                       </div>
                     </li>
                   {% endif %}
@@ -86,7 +86,7 @@
                   <li>
                     <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
                       <input name="next" type="hidden" value="{{ redirect_to }}">
-                      <button type="submit" name="language" value="{{ language.code }}" href="#" class="language-menu-item">{{ language.name_local }} ({{ language.code }})</a>
+                      <button type="submit" name="language" value="{{ language.code }}" href="#" class="language-menu-item">{{ language.name_local }} ({{ language.code }})</button>
                     </form>
                   </li>
               {% endfor %}
