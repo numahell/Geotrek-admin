@@ -50,50 +50,53 @@
   </ul>
 
   <ul class="navbar-nav">
-        {% if request.user.is_authenticated %}
-        <li class="divider-vertical"></li>
-        <li class="dropdown">
-           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="icon-user"></i>
-              {{ request.user }}
-              {% smart_include "usermenu" %}
-              <b class="caret"></b>
-           </a>
-           <ul class="dropdown-menu">
+    {% if request.user.is_authenticated %}
+    <li class="divider-vertical"></li>
+    <li class="dropdown">
+      <a href="#" class="nav-link dropdown-toggle"
+        id="navbarDropdownUsermenuLink" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <i class="icon-user"></i>
+        {{ request.user }}
+        {% smart_include "usermenu" %}
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdownUsermenuLink">
 
-              {% smart_include "menuentries" %}
+        {% smart_include "menuentries" %}
 
-              {% if request.user.is_staff %}
-              <li><a href="{% url 'admin:index' %}">{% trans "Admin" %}</a></li>
-              {% else %}
-              <li class="disabled"><a href="#">{% trans "Admin" %}</a></li>
-              {% endif %}
-
-              {% if ACTION_HISTORY_ENABLED %}
-                {% if 'admin.read_logentry' in perms %}
-                <li><a class="{% block nav-logbook %}{% endblock nav-logbook %}" href="{% url 'mapentity:logentry_list' %}">{% trans "Logbook" %}</a></li>
-                {% else %}
-                <li class="disabled"><a href="#">{% trans "Logbook" %}</a></li>
-                {% endif %}
-              {% endif %}
-
-              <li class="divider"></li>
-              {% get_current_language as LANGUAGE_CODE %}
-              {% get_available_languages as LANGUAGES %}
-              {% get_language_info_list for LANGUAGES as languages %}
-              {% for language in languages %}
-                  <li>
-                    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-                      <input name="next" type="hidden" value="{{ redirect_to }}">
-                      <button type="submit" name="language" value="{{ language.code }}" href="#" class="language-menu-item">{{ language.name_local }} ({{ language.code }})</button>
-                    </form>
-                  </li>
-              {% endfor %}
-
-              <li class="divider"></li>
-              <li><a href="{% url 'logout' %}"><i class="icon-off"></i> {% trans "Logout" %}</a></li>
-           </ul>
-        </li>
+        {% if request.user.is_staff %}
+        <li class="dropdown-item"><a href="{% url 'admin:index' %}">{% trans "Admin" %}</a></li>
+        {% else %}
+        <li class="dropdown-item" class="disabled"><a href="#">{% trans "Admin" %}</a></li>
         {% endif %}
+
+        {% if ACTION_HISTORY_ENABLED %}
+          {% if 'admin.read_logentry' in perms %}
+          <li class="dropdown-item"><a class="{% block nav-logbook %}{% endblock nav-logbook %}" href="{% url 'mapentity:logentry_list' %}">{% trans "Logbook" %}</a></li>
+          {% else %}
+          <li class="dropdown-item" class="disabled"><a href="#">{% trans "Logbook" %}</a></li>
+          {% endif %}
+        {% endif %}
+
+        <li class="dropdown-divider"></li>
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+          <li>
+            <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+              <input name="next" type="hidden" value="{{ redirect_to }}">
+              <button type="submit" name="language" value="{{ language.code }}"
+                      class="language-menu-item {% if language.code == LANGUAGE_CODE  %}active{% endif %}">
+                {{ language.name_local }} ({{ language.code }})</button>
+            </form>
+          </li>
+        {% endfor %}
+
+        <li class="dropdown-divider"></li>
+        <li class="dropdown-item"><a href="{% url 'logout' %}"><i class="icon-off"></i> {% trans "Logout" %}</a></li>
       </ul>
+    </li>
+    {% endif %}
+  </ul>
 </nav>
