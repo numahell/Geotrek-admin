@@ -24,8 +24,10 @@
         .form-panel.{{ entity.modelname }}, .details-panel.{{ entity.modelname }} {
             background: url({% static entity.icon_big %}) no-repeat;
         }
-        li.history.{{ entity.modelname }} > a, li.history.{{ entity.modelname }} button:first-child {
-            background-image: url({% static entity.icon_small %});
+        li.history.{{ entity.modelname }} > a,
+        li.history.{{ entity.modelname }} button:first-child {
+            background: url({% static entity.icon_small %}) no-repeat;
+            background-position: left center;
         }
     {% endfor %}
     {% if not DEBUG %}

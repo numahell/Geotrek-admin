@@ -1,56 +1,55 @@
 {% load static i18n mapentity_tags %}
-<div class="navbar">
-    <ul id="historylist" class="navbar-nav mr-auto">
-      {% if request.user.is_authenticated %}
-      <li class="history {% if viewname == 'list' %}{{ modelname }} active{% endif %}">
-        <div id="entitylist-dropdown" class="btn-group">
-              <button class="btn" onclick="javascript:location='{% url 'home' %}';">
-                {% trans "List" %} <span id="nbresults" class="badge">?</span>
-              </button>
-              <button class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu">
-                {% for entity in allowed_entities %}
-                  {% if entity.menu %}
-                    <li class="{% if entity.modelname == modelname %}active{% endif %}">
-                      <a href="{% url entity.url_list %}">
-                        <img src="{% static entity.icon_small %}"/> {{ entity.label }}
-                      </a>
-                      <div class="add-btn">
-                        <a class="btn btn-success btn-mini" title="{% trans 'Add' %}" href="{% url entity.url_add %}">+</a>
-                      </div>
-                    </li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-        </div>
-      </li>
-      {% endif %}
-      {% block toolbar %}
-        {% for item in request.session.history %}
-            {% if forloop.first and viewname != "list" %}
-                <li class="{{ modelname }} active history first">
-                    <a href="{{ item.path }}">
-                        <span class="content">{% if title|lower %}{{ title }}{% else %}{{ item.title }}{% endif %}</span>
-                        {% if viewname == "detail" %}
-                           <button class="close hidden">&times;</button>
-                        {% endif %}
-                    </a>
-                </li>
-            {% else %}
-                <li class="{% if forloop.first %}{% block nav-detail %}{% endblock nav-detail %}{% endif %} {{ item.modelname }} history">
-                    <a href="{{ item.path }}" title="{{ item.title }}">
-                        <span class="content">{{ item.title|truncatechars:12 }}</span>
-                        <button class="close hidden">&times;</button>
-                    </a>
-                </li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <ul id="historylist" class="navbar-nav mr-auto">
+    {% if request.user.is_authenticated %}
+    <li class="history nav-item {% if viewname == 'list' %}{{ modelname }} active{% endif %}">
+      <div id="entitylist-dropdown" class="btn-group">
+        <button class="btn btn-light" onclick="javascript:location='{% url 'home' %}';">
+          {% trans "List" %} <span id="nbresults" class="badge badge-secondary">?</span>
+        </button>
+        <button class="btn btn-light dropdown-toggle dropdown-toggle-split"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="sr-only">{% trans "Quick access" %}</span>
+        </button>
+        <ul class="dropdown-menu">
+          {% for entity in allowed_entities %}
+            {% if entity.menu %}
+              <li class="dropdown-item {% if entity.modelname == modelname %}active{% endif %}">
+                <a href="{% url entity.url_list %}">
+                  <img src="{% static entity.icon_small %}"/> {{ entity.label }}
+                </a>
+                <a class="entitylist-add-btn btn btn-sm btn-success btn-mini" title="{% trans 'Add' %}" href="{% url entity.url_add %}">+</a>
+              </li>
             {% endif %}
-        {% endfor %}
-      {% endblock toolbar %}
-    </ul>
+          {% endfor %}
+        </ul>
+      </div>
+    </li>
+    {% endif %}
+    {% block toolbar %}
+      {% for item in request.session.history %}
+          {% if forloop.first and viewname != "list" %}
+              <li class="{{ modelname }} active history first">
+                  <a href="{{ item.path }}">
+                      <span class="content">{% if title|lower %}{{ title }}{% else %}{{ item.title }}{% endif %}</span>
+                      {% if viewname == "detail" %}
+                         <button class="close hidden">&times;</button>
+                      {% endif %}
+                  </a>
+              </li>
+          {% else %}
+              <li class="{% if forloop.first %}{% block nav-detail %}{% endblock nav-detail %}{% endif %} {{ item.modelname }} history">
+                  <a href="{{ item.path }}" title="{{ item.title }}">
+                      <span class="content">{{ item.title|truncatechars:12 }}</span>
+                      <button class="close hidden">&times;</button>
+                  </a>
+              </li>
+          {% endif %}
+      {% endfor %}
+    {% endblock toolbar %}
+  </ul>
 
-    <ul class="navbar-nav">
+  <ul class="navbar-nav">
         {% if request.user.is_authenticated %}
         <li class="divider-vertical"></li>
         <li class="dropdown">
@@ -97,4 +96,4 @@
         </li>
         {% endif %}
       </ul>
-</div>
+</nav>
