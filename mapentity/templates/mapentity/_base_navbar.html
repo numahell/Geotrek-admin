@@ -1,10 +1,8 @@
 {% load static i18n mapentity_tags %}
 <div class="navbar">
-  <div class="navbar-inner">
-
-    <ul id="historylist" class="nav">
+    <ul id="historylist" class="navbar-nav mr-auto">
       {% if request.user.is_authenticated %}
-      <li class="history {% if viewname == "list" %}{{ modelname }} active{% endif %}">
+      <li class="history {% if viewname == 'list' %}{{ modelname }} active{% endif %}">
         <div id="entitylist-dropdown" class="btn-group">
               <button class="btn" onclick="javascript:location='{% url 'home' %}';">
                 {% trans "List" %} <span id="nbresults" class="badge">?</span>
@@ -52,7 +50,7 @@
       {% endblock toolbar %}
     </ul>
 
-    <ul class="nav pull-right">
+    <ul class="navbar-nav">
         {% if request.user.is_authenticated %}
         <li class="divider-vertical"></li>
         <li class="dropdown">
@@ -99,5 +97,4 @@
         </li>
         {% endif %}
       </ul>
-  </div>
 </div>
