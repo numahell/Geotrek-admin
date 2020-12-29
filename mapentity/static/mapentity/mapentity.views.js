@@ -60,7 +60,7 @@ $(window).on('entity:view:list', function (e, data) {
     // Hardcore Datatables customizations
     $('li.next a').html($('li.next a').html().replace('Next', ''));
     $('li.prev a').html($('li.prev a').html().replace('Previous', ''));
-    $('#objects-list_filter input').attr('placeHolder', tr("Search"));
+    $('#objects-list_filter input').attr('placeHolder', tr("Search")).addClass('form-control');
     $('#objects-list_filter label').contents().filter(function() {return this.nodeType === 3;/*Node.TEXT_NODE*/}).remove();
 
 });

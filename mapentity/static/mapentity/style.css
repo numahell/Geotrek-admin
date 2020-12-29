@@ -150,7 +150,7 @@ select[multiple] {
     display: flex;
 }
 #container {
-    height: calc(100vh - 41px);
+    height: calc(100vh - 56px);
 }
 
 #mainmap {
@@ -291,9 +291,11 @@ tr.selected-row td {
 
 #list-panel {
     padding: 4px;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 60px);
     width: calc(100% - 60px);
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-height: 960px) {
@@ -348,13 +350,17 @@ tr.selected-row td {
 
 
 /* Datatables customization for filters and pagination */
-.dataTables_wrapper {
-    height: calc( 100% - 60px);
-}
-.dataTables_wrapper.form-inline {
-    align-items: flex-start;
-}
 
+.dataTables_wrapper {
+    flex-grow: 1;
+}
+div.dataTables_wrapper div.dataTables_paginate {
+    float: right;
+}
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: left;
+}
+/*
 #list-download-toolbar,
 #objects-list_filter,
 div.dataTables_paginate {
@@ -399,7 +405,7 @@ div.dataTables_paginate {
     }
 }
 
-
+*/
 
 
 /* Filters popover */
