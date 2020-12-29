@@ -455,9 +455,8 @@ span.filter-info {
     padding-left: 40px;
 }
 
-.details-panel .table {
-    table-layout: fixed;
-    margin-right: 10px;
+.details-panel .tab-content > .tab-pane.active {
+    padding: 15px 5px;
 }
 
 .details-panel table.blades {
@@ -514,20 +513,21 @@ span.filter-info {
 }
 
 .download-group {
-    clear: both;
-    line-height: 35px;
-    display: block;
-    height: 35px;
+    margin: .75rem 0;
+    text-align: right;
 }
 
 .details-panel .nav-tabs {
-    margin-left: 40px;
+    margin-left: 50px;
 }
 
 .details-panel .nav-tabs li:first-child {
     margin-left: 10px;
 }
 
+.map-panel {
+    min-height: calc(100vh - 65px);
+}
 .map-panel .leaflet-control-attribution {
     display: none;
 }
