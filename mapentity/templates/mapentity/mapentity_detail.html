@@ -4,7 +4,7 @@
 {% block title %}{{ object }} | {{ block.super }}{% endblock title %}
 
 {% block mainpanel %}
-    <div class="details-panel detail span7 {{ modelname }}">
+    <div class="details-panel detail col-sm-7 {{ modelname }}">
 
         <div class="download-group">
             <div class="btn-group pull-right">
@@ -90,9 +90,9 @@
                 {% endif %}
             </div>
         </div>
-    </div><!-- span7 -->
+    </div><!-- col-sm-7 -->
 
-    <div class="map-panel detail span5" {% if mapwidth and mapheight %}style="width: {{ mapwidth }}px; height: {{ mapheight }}px;"{% endif %}>
+    <div class="map-panel detail col-sm-5" {% if mapwidth and mapheight %}style="width: {{ mapwidth }}px; height: {{ mapheight }}px;"{% endif %}>
         {% block mappanel %}
         {% if object.get_geom %}
             {% include "mapentity/mapgeometry_fragment.html" with mapname="detailmap" %}
@@ -100,6 +100,6 @@
             <p class="nomap">{{ empty_map_message }}</p>
         {% endif %}
         {% endblock mappanel %}
-    </div><!-- span5 -->
+    </div><!-- col-sm-5 -->
 
 {% endblock mainpanel %}
