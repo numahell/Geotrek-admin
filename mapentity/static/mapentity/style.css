@@ -136,7 +136,7 @@ select[multiple] {
 
 /**** Layout ****/
 
-#container,
+.list-container,
 #panelleft,
 #panelright {
     position: relative;
@@ -145,14 +145,13 @@ select[multiple] {
 #panelright {
     width: 50%;
 }
-#container,
+.list-container,
 #panelleft {
     display: flex;
 }
-#container {
+.list-container {
     height: calc(100vh - 56px);
 }
-
 #mainmap {
     position: absolute;
     top: 0px;
@@ -161,9 +160,7 @@ select[multiple] {
     right: 0px;
 }
 
-.map-panel.detail {position: absolute; top: 2px; bottom: 0px; right: 0px;}
 #detailmap {height: 100%;}
-
 
 /**** Maps ****/
 
