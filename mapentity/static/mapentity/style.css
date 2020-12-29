@@ -351,6 +351,9 @@ tr.selected-row td {
 .dataTables_wrapper {
     height: calc( 100% - 60px);
 }
+.dataTables_wrapper.form-inline {
+    align-items: flex-start;
+}
 
 #list-download-toolbar,
 #objects-list_filter,
