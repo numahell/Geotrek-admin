@@ -127,6 +127,10 @@ select[multiple] {
     color: #FFF;
 }
 
+#historylist .nav-link {
+    padding-left: 15px;
+}
+
 /**** Layout ****/
 
 .list-container,
@@ -596,26 +600,12 @@ body.screamshot .leaflet-control-scale-line {
 /***** Entity form ******/
 
 .form-panel {
-    margin-top: 10px;
+    flex-basis: 100%;
 }
-
+/*
 .form-panel > form {
     padding-left: 10px;
     margin-bottom: 0px;
-}
-
-.form-panel .form-actions {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    margin: 0px;
-    padding: 10px;
-    height: 30px;
-}
-
-.form-panel .scrollable {
-    margin-bottom: 55px;
 }
 
 .form-panel .tab-content .nav {
@@ -625,7 +615,7 @@ body.screamshot .leaflet-control-scale-line {
 .form-panel .nav-tabs .error {
     color: #B94A48;
 }
-
+*/
 label.requiredField {
     font-weight: bold;
 }
@@ -740,18 +730,16 @@ fieldset.formset .form-row:last-of-type a.delete-row {
     display: none;
 }
 
+/* Form layout */
 
-
-#geomfield {
-    position: absolute;
-    top: 2px;
-    bottom: 51px;
-    right: 0px;
+#modelfields {
+    height: calc(100vh - 120px);
 }
+
 #geomfield .leaflet-container,
 #geomfield .control-group,
 #geomfield .controls {
-    height: 100%;
+    height: calc(100vh - 120px);
     margin-left: 0;
 }
 
@@ -763,12 +751,6 @@ fieldset.formset .form-row:last-of-type a.delete-row {
 /* Tired of bootstrap ?
 TODO: please help;
  */
-#modelfields.span4 {
-    width: 33%;
-}
-#geomfield.span8 {
-    width: 66%;
-}
 
 #geomfield label.control-label {
     position: absolute;
