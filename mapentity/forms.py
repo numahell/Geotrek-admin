@@ -199,11 +199,11 @@ class MapEntityForm(TranslatedModelForm):
                 Div(
                     leftpanel,
                     *rightpanel,
-                    formactions,
                     css_class="row"
                 ),
                 css_class="container-fluid"
             ),
+            formactions,
         )
 
     def __replace_translatable_fields(self, fieldslayout):

@@ -202,7 +202,7 @@ select[multiple] {
 }
 
 .leaflet-control-layers-list {
-   max-height: calc( 100vh - 120px );
+   max-height: calc( 100vh - 160px );
    overflow-y: auto;
    overflow-x: hidden;
    margin: 0;
@@ -607,9 +607,15 @@ body.screamshot .leaflet-control-scale-line {
     flex-basis: 100%;
 }
 .form-panel .scrollable {
-    height: calc(100vh - 120px);
+    height: calc(100vh - 140px - 1rem);
     padding-bottom: 20px;
 }
+.form-actions {
+    background-color: var(--light);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
 label.requiredField {
     font-weight: bold;
 }

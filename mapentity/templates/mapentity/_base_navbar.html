@@ -41,7 +41,7 @@
               <li class="{% if forloop.first %}{% block nav-detail %}{% endblock nav-detail %}{% endif %} {{ item.modelname }} nav-item history">
                   <a class="nav-link" href="{{ item.path }}" title="{{ item.title }}">
                       <span class="content">{{ item.title|truncatechars:12 }}</span>
-                      <button class="close hidden">&times;</button>
+                      <button class="close d-none">&times;</button>
                   </a>
               </li>
           {% endif %}
