@@ -599,29 +599,25 @@ body.screamshot .leaflet-control-scale-line {
 
 /***** Entity form ******/
 
+/*
+ * Field and labels
+ */
+
 .form-panel {
     flex-basis: 100%;
 }
-/*
-.form-panel > form {
-    padding-left: 10px;
-    margin-bottom: 0px;
+.form-panel .scrollable {
+    height: calc(100vh - 120px);
+    padding-bottom: 20px;
 }
-
-.form-panel .tab-content .nav {
-    margin-bottom: 5px;
-}
-
-.form-panel .nav-tabs .error {
-    color: #B94A48;
-}
-*/
 label.requiredField {
     font-weight: bold;
 }
-
 label.requiredField .asteriskField {
     color: red;
+}
+.form-panel .nav-tabs .error {
+    color: #B94A48;
 }
 
 .help-inline {
@@ -631,12 +627,9 @@ label.requiredField .asteriskField {
 .form-horizontal .control-group {
     margin-bottom: 5px;
 }
-
-
 .form-horizontal .control-label {
     width: 140px;
 }
-
 .form-horizontal .controls {
     margin-left: 145px;
 }
@@ -646,7 +639,6 @@ label.requiredField .asteriskField {
     .form-horizontal .control-label {
         width: 95px;
     }
-
     .form-horizontal .controls {
         margin-left: 100px;
     }
@@ -731,10 +723,6 @@ fieldset.formset .form-row:last-of-type a.delete-row {
 }
 
 /* Form layout */
-
-#modelfields {
-    height: calc(100vh - 120px);
-}
 
 #geomfield .leaflet-container,
 #geomfield .control-group,
