@@ -128,7 +128,8 @@ select[multiple] {
 }
 
 #historylist .nav-link {
-    padding-left: 15px;
+    padding-left: 18px;
+    padding-right: 10px;
 }
 
 /**** Layout ****/
