@@ -148,7 +148,7 @@ select[multiple] {
     display: flex;
 }
 .list-container {
-    height: calc(100vh - 56px);
+    height: calc(100vh - 65px);
 }
 #mainmap {
     position: absolute;
@@ -286,7 +286,7 @@ tr.selected-row td {
 
 #list-panel {
     padding: 4px;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 65px);
     width: calc(100% - 60px);
     flex-grow: 1;
     display: flex;
@@ -325,7 +325,7 @@ tr.selected-row td {
 /*** Left menu ***/
 #entitylist {
     width: 40px;
-    max-height: calc(100vh - 50px);
+    max-height: calc(100vh - 65px);
     overflow-y: auto;
 }
 
