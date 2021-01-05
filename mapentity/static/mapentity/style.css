@@ -68,7 +68,16 @@ select[multiple] {
 }
 
 .autohide {
-    display: none;
+    opacity: 0.1;
+}
+.autohide .btn {
+    font-size: .7rem;
+}
+.autohide .bi {
+    font-size: .7rem;
+}
+.autohide.hover {
+    opacity: 1;
 }
 
 .scrollable {
